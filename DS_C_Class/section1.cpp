@@ -3,22 +3,40 @@
 
 using namespace std;
 
+#include <stdio.h>
+#include <iostream>
+
 main(){
-    int A[5];
-    A[0] = 5;
-    A[1] = 10;
-    A[2] = 20;
-    A[3] = 25;
-    A[4] = 30;
-    
-    cout<<sizeof(A)<<endl;  /*Print size of A*/
-    cout<<A[1]<<endl;       /*Print A[1]*/
-    printf("%d\n",A[2]);    /*Print A[2]*/
+    plus_input_output();
+    rectangleStruct();
     
     return 0;
 }
 
-input_output(){
+struct Rectangle{
+    int length;         /*4 bytes*/
+    int breadth;        /*4 bytes*/
+    char x;             /*1 byte*/
+}
+
+rectangleStruct(){
+    struct Rectangle r1={10,5,'c'}; /*Takes 12 bytes b/c nearest multiple of 4*/
+    
+    /*C*/
+    printf("%lu", sizeof(r1));
+    
+    r1.length=15;
+    r1.breadth=7;
+    r1.x='r';
+    
+    /**C++**/
+    cout<<r1.length<<endl;
+    cout<<r1.breadth<<endl;
+    cout<<r1.x<<endl;
+}
+
+/*C++ first time with carry in carry out*/
+plus_input_output(){
     int n;
     cout<<"Enter Size";
     cin>>n;
@@ -29,5 +47,9 @@ input_output(){
         cout<<x<<endl;
     }
     
+    cout<<sizeof(A)<<endl;  /*Print size of A*/
+    cout<<A[1]<<endl;       /*Print A[1]*/
+    printf("%d\n",A[2]);    /*Print A[2]*/
+    
     return 0;
-}
+};
