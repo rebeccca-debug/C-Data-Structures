@@ -11,9 +11,9 @@ main(){
     A[3] = 25;
     A[4] = 30;
     
-    cout<<sizeof(A)<<endl;
-    cout<<A[1]<<endl;
-    printf("%d\n",A[2]);
+    cout<<sizeof(A)<<endl;  /*Print size of A*/
+    cout<<A[1]<<endl;       /*Print A[1]*/
+    printf("%d\n",A[2]);    /*Print A[2]*/
     
     return 0;
 }
