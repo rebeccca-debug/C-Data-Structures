@@ -3,9 +3,6 @@
 
 using namespace std;
 
-#include <stdio.h>
-#include <iostream>
-
 main(){
     plus_input_output();
     rectangleStruct();
