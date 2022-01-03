@@ -274,26 +274,50 @@ Array));
 
 
 
-int main(){
-    struct Array arr;
-    int n,i;
-    printf("Enter size of an array");
-    scanf("%d",&arr.size);
-    arr.A=(int *)malloc(arr.size*sizeof(int));
-    arr.length=0;
+int main()
+{
+    struct Array *arr1;
+    int ch,sz;
+    int x,index;
 
-    printf("Enter number of numbers");
-    scanf("%d",&n);
+    cout<<"Enter Size of Array";
+    scanf("%d",&sz);
+    arr1=new Array(sz);
 
-    printf("Enter all Elements\n");
-    for(i=0;i<n;i++){
-        scanf("%d",&arr.A[i]);
+    do {
+        cout<<"\n\nMenu\n";
+        cout<<"1. Insert\n";
+        cout<<"2. Delete\n";
+        cout<<"3. Search\n";
+        cout<<"4. Sum\n";
+        cout<<"5. Display\n";
+        cout<<"6.Exit\n";
+
+        cout<<"enter you choice ";
+        cin>>ch;
+        switch(ch) {
+            case 1: cout<<"Enter an element and index ";
+            cin>>x>>index;
+            arr1->Insert(index,x);
+            break;
+
+            case 2: cout<<"Enter index ";
+            cin>>index;
+            x=arr1->Delete(index);
+            cout<<"Deleted Element is"<<x;
+            break;
+
+            case 3:cout<<"Enter element to search";
+            cin>>x;
+            index=arr1->LinearSearch(x);
+            cout<<"Element index "<<index;
+            break;
+
+            case 4:cout<<"Sum is "<<arr1->Sum();
+            break;
+            case 5:arr1->Display();
+        }
     }
-    arr.length=n;
-
-    printf("%d\n",LinearSearch(arr,2));
-    printf("%d\n", BinarySearch(arr,15));
-    Display(arr);
-
-    return 0;
+    while(ch<6);
+        return 0;
 }
